@@ -277,6 +277,65 @@ MonoBehaviour:
   dstFromTarget: 3
   pitchMinMax: {x: -8, y: 70}
   rotationSmoothTime: 0.12
+--- !u!1 &227898926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 227898928}
+  - component: {fileID: 227898927}
+  m_Layer: 0
+  m_Name: WorldManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &227898927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 227898926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed1e6d941d663442bf2ab6b9d6af798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  corneRoadRtop: {fileID: 1923360184291990, guid: 1fd4db73435d370429f3c9703e671ac3,
+    type: 2}
+  corneRoadLtop: {fileID: 1959357812139574, guid: c7154f51a7b22d64b908b622912e0bdf,
+    type: 2}
+  corneRoadRdn: {fileID: 1756666948422792, guid: a89f54bb70fa09641afbdc6ec4f788ff,
+    type: 2}
+  corneRoadLdn: {fileID: 1514239523399530, guid: b7d0fd4d7c18c9d46b446744b0c24d61,
+    type: 2}
+  xRoad: {fileID: 1404851276831262, guid: c1c242426c2fabf43abdbc6b78726f35, type: 2}
+  zRoad: {fileID: 1888973340824122, guid: e1dc3b080fb70f8459906f392ed8dac4, type: 2}
+  crossRoad: {fileID: 1644222584530686, guid: 95b7cd26c07512c479f508af4573b0c2, type: 2}
+  tafRRoad: {fileID: 1669600265795802, guid: 25db6c28b4cae674ea8c57911e3b0986, type: 2}
+  tafLRoad: {fileID: 1800695328432900, guid: 3d61cd19fe3c18e4b8e421ab1257003d, type: 2}
+  tafUpRoad: {fileID: 1134768132837636, guid: 656dda909c8556543a9b4ca9df118ff7, type: 2}
+  tafDownRoad: {fileID: 1046958397806216, guid: b94313d006a67ec488868417f73656a7,
+    type: 2}
+  mapWidth: 30
+  mapHeight: 30
+  RoadsDensity: 10
+--- !u!4 &227898928
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 227898926}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 200, y: 1, z: 200}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1415647014
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +368,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: f507a519e4e58e54786c0be25dbe9770, type: 2}
+  - {fileID: 2100000, guid: 5c8907d6ac547b84ea17724f72a02590, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -356,8 +415,8 @@ Transform:
   m_GameObject: {fileID: 1415647014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 1, z: 15}
+  m_LocalScale: {x: 200, y: 1, z: 200}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
