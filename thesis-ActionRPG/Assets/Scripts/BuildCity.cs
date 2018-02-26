@@ -24,7 +24,6 @@ public class BuildCity : MonoBehaviour
 
     public string mapTxtFileName = "fileEneas.txt";
     public int seed = 100;//UnityEngine.Random.Range(0,100);
-    private int numofRoads = 7;
     public int mapWidth = 30;
     public int mapHeight = 30;
     private int envObjectFootprint = 3;
