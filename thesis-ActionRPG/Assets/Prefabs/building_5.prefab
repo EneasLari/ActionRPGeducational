@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 33581025467489144}
   - component: {fileID: 23399936257035722}
   - component: {fileID: 64135415702363380}
+  - component: {fileID: 208288354532210822}
   m_Layer: 0
   m_Name: building_5
   m_TagString: Untagged
@@ -212,4 +213,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0005b36e92ad39e4da3b33900f74f994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enablePropability: 6
+  enablePropability: 100
+--- !u!208 &208288354532210822
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930210029984432}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.3850001, y: 1.9240001, z: 1.7360001}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.024, y: 1.9240001, z: -0.004}
+  m_TimeToStationary: 0.5

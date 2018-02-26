@@ -73,10 +73,14 @@ public class BuildCity : MonoBehaviour
                         GameObject inst= Instantiate(buldings[5], pos, Quaternion.identity);
                         inst.transform.localScale=new Vector3(envObjectFootprint+.15f,inst.transform.localScale.y, envObjectFootprint+.15f);
                     }
+                    else if (result < 14)
+                    {
+                        Instantiate(buldings[6], pos, Quaternion.identity);
+                    }
                     else if (result < 18)
                     {
                         Vector3 pos2 = new Vector3(w * envObjectFootprint, 0.28f, h * envObjectFootprint);//for the trees only
-                        GameObject inst = Instantiate(buldings[6], pos2, Quaternion.identity);
+                        GameObject inst = Instantiate(buldings[7], pos2, Quaternion.identity);
                         inst.transform.localScale = new Vector3(envObjectFootprint, inst.transform.localScale.y, envObjectFootprint);
                     }
                 }

@@ -1038,7 +1038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0005b36e92ad39e4da3b33900f74f994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enablePropability: 100
+  enablePropability: 7.2
 --- !u!114 &114786218160888160
 MonoBehaviour:
   m_ObjectHideFlags: 1

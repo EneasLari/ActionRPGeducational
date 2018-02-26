@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 33436808906847240}
   - component: {fileID: 23885451322492240}
   - component: {fileID: 64505206493454762}
+  - component: {fileID: 208348989387760470}
   m_Layer: 0
   m_Name: building_1
   m_TagString: Untagged
@@ -906,7 +907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0005b36e92ad39e4da3b33900f74f994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enablePropability: 98.9
+  enablePropability: 7.3
 --- !u!114 &114317173260046044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -952,7 +953,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 6
+  m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -964,3 +965,18 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!208 &208348989387760470
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945378766809384}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 1.245, y: 1.8410001, z: 1.496}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.074, y: 1.84, z: 0}
+  m_TimeToStationary: 0.5

@@ -10,7 +10,7 @@ public class Wander : MonoBehaviour {
     // Use this for initialization
     void Start () {
         global = GameObject.FindGameObjectsWithTag("GlobalVariables");
-        StartCoroutine(Delay(3));
+        StartCoroutine(Delay(0));
     }
 	
 	// Update is called once per frame

@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 33037697474401162}
   - component: {fileID: 23017299802074940}
   - component: {fileID: 64924246017336348}
-  - component: {fileID: 114061199880608220}
   m_Layer: 0
   m_Name: roadX
   m_TagString: Untagged
@@ -248,19 +247,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: a8081dad0949652458a38a771d5a7fa0, type: 3}
---- !u!114 &114061199880608220
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404851276831262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4abfa16db9d114ec0ae6e10e4a566cb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NavMesh: {fileID: 0}
-  m_FollowTransform: 0
 --- !u!114 &114206496395137298
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -5,9 +5,9 @@ public class ThirdPersonCamera : MonoBehaviour {
 
 	public bool lockCursor;
 	public float mouseSensitivity = 10;
-	public Transform target;//you must create a empty gameobject where the camera will lookat(name it lookAt)
-	public float dstFromTarget = 2;//distance from player 
-	public Vector2 pitchMinMax = new Vector2 (-40, 85);//rotation at the x axis
+	public Transform target;
+	public float dstFromTarget = 2;
+	public Vector2 pitchMinMax = new Vector2 (-40, 85);
 
 	public float rotationSmoothTime = .12f;
 	Vector3 rotationSmoothVelocity;
@@ -24,7 +24,6 @@ public class ThirdPersonCamera : MonoBehaviour {
 	}
 
 	void LateUpdate () {
-        //rotating camera with mouse
 		yaw += Input.GetAxis ("Mouse X") * mouseSensitivity;
 		pitch -= Input.GetAxis ("Mouse Y") * mouseSensitivity;
 		pitch = Mathf.Clamp (pitch, pitchMinMax.x, pitchMinMax.y);
