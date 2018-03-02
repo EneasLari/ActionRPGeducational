@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - GlobalVariables
+  - Spawner
   layers:
   - Default
   - TransparentFX

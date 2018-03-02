@@ -7,7 +7,7 @@ public class AddDestinationForAgent : MonoBehaviour {
     // Use this for initialization
     void Start () {
         global = GameObject.FindGameObjectsWithTag("GlobalVariables");
-        global[0].GetComponent<GlobalDestinations>().wps.Add(gameObject);
+        global[0].GetComponent<GlobalVariables>().wps.Add(gameObject);
 	}
 	
 	// Update is called once per frame

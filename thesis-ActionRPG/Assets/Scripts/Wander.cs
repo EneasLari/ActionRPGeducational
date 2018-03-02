@@ -26,8 +26,8 @@ public class Wander : MonoBehaviour {
     {
         yield return new WaitForSeconds(delay);
         agent = this.GetComponent<NavMeshAgent>();
-        int d = Random.Range(0, global[0].GetComponent<GlobalDestinations>().wps.Count);
-        agent.SetDestination(global[0].GetComponent<GlobalDestinations>().wps[d].transform.position);
+        int d = Random.Range(0, global[0].GetComponent<GlobalVariables>().wps.Count);
+        agent.SetDestination(global[0].GetComponent<GlobalVariables>().wps[d].transform.position);
 
     }
 
