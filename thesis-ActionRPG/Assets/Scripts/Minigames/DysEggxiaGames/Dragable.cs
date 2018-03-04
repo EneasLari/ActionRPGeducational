@@ -71,16 +71,19 @@ public class Dragable : MonoBehaviour,IBeginDragHandler,IDragHandler ,IEndDragHa
 
     public void OnEndDrag(PointerEventData eventData)//Functionality and gameplay of change a letter mini game
     {
-        string name=(gameObject.GetComponentInChildren<RawImage>().texture.name);
+        string nameofLetterImage=(gameObject.GetComponentInChildren<RawImage>().texture.name);
+        string correctLetter = spawnCubesObject.GetComponent<spawnCubes>().correctLetter;
+        string wrongLetter = spawnCubesObject.GetComponent<spawnCubes>().wrongLetter;
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(this.transform.position);
         if (Physics.Raycast(ray, out hit))
         {
             BoxCollider bc = hit.collider as BoxCollider;
-            if (bc != null && name.Equals(spawnCubesObject.GetComponent<spawnCubes>().correctLetter) && (bc.gameObject.name).Equals(spawnCubesObject.GetComponent<spawnCubes>().wrongLetter + "(Clone)")) 
+            if (bc != null && nameofLetterImage.Equals(correctLetter) && (bc.gameObject.name).Equals(wrongLetter + "(Clone)")) 
             {
                 bc.gameObject.GetComponent<Replacement>().replaceObject = spawnCubesObject.GetComponent<spawnCubes>().getPrefabFromLetter(gameObject.GetComponentInChildren<RawImage>().texture.name);
                 bc.gameObject.GetComponent<Replacement>().replace();
+                print("You changed the correct letter.Excellent!");
                 Destroy(gameObject);
             }
         }

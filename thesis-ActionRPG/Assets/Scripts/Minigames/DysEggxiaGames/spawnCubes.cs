@@ -10,6 +10,7 @@ public class spawnCubes : MonoBehaviour {
     public bool isExtraLetterGame = false;
     public bool isFindTheMissingLetterGame = false;
     public bool isCutIntoTwoWords = false;
+    public GameObject betweenObject;
     public GameObject[] alphabetprefabs;
     private GameObject[] global;
     private string wordChanged;
@@ -55,14 +56,27 @@ public class spawnCubes : MonoBehaviour {
         global = GameObject.FindGameObjectsWithTag("GlobalVariables");
         string word1 = global[0].GetComponent<CommonWords>().getWord();
         string word2 = global[0].GetComponent<CommonWords>().getWord();
+        Vector3 pos=new Vector3(0,0,0);
         print(word1);
         print(word2);
-        word = word1 + word2;
+        word = word1 +betweenObject.name+ word2;
+        GameObject inst = null;
         foreach (char c in word)
         {
-            Vector3 pos = new Vector3(gameObject.transform.position.x + offsetatX, gameObject.transform.position.y, gameObject.transform.position.z);
-            GameObject inst = Instantiate(getPrefabFromLetter(c + ""), pos, getPrefabFromLetter(c + "").transform.rotation);
-            offsetatX = offsetatX + 1.1f;
+            if (betweenObject.name.Equals(c + ""))
+            {
+               // pos = new Vector3(gameObject.transform.position.x + offsetatX, gameObject.transform.position.y, gameObject.transform.position.z);
+                //inst = Instantiate(getPrefabFromLetter(c + ""), pos, getPrefabFromLetter(c + "").transform.rotation);
+                pos = new Vector3(pos.x + (inst.transform.lossyScale.x / 2), pos.y, pos.z);
+                GameObject endOfWordCube = Instantiate(betweenObject, pos, Quaternion.identity);
+                endOfWordCube.transform.SetParent(inst.transform);
+            }
+            else {
+                pos = new Vector3(gameObject.transform.position.x + offsetatX, gameObject.transform.position.y, gameObject.transform.position.z);
+                inst = Instantiate(getPrefabFromLetter(c + ""), pos, getPrefabFromLetter(c + "").transform.rotation);
+                offsetatX = offsetatX + 1.1f;
+            }
+
         }
     }
 

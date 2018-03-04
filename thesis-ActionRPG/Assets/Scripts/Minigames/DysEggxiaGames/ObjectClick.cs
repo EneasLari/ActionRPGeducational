@@ -16,11 +16,16 @@ public class ObjectClick : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray,out hit)) {
                 BoxCollider bc = hit.collider as BoxCollider;
-                if (bc!=null && bc.gameObject.GetComponent<Rigidbody>()!=null) {                 
-                    if (bc.gameObject.GetComponent<Rigidbody>().mass<100)
+                if (bc!=null) {
+                    bool rigidbodyIsNull = bc.gameObject.GetComponent<Rigidbody>() == null;
+                    if (!rigidbodyIsNull && bc.gameObject.GetComponent<Rigidbody>().mass < 100)
                     {
                         bc.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 300);
                         print("You took out the extra letter BRAVO!");
+                    }
+                    else if (bc.gameObject.name.Equals("+(Clone)")) {
+                        DestroyObject(bc.gameObject);
+                        print("YOU SEPARATED THE WORDS EXCELLENT");
                     }
                 }
 

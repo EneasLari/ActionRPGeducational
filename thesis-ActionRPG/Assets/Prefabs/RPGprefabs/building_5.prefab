@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0005b36e92ad39e4da3b33900f74f994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enablePropability: 100
+  enablePropability: 33
 --- !u!208 &208288354532210822
 NavMeshObstacle:
   m_ObjectHideFlags: 1
