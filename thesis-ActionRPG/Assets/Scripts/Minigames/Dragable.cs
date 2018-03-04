@@ -8,7 +8,9 @@ public class Dragable : MonoBehaviour,IBeginDragHandler,IDragHandler ,IEndDragHa
     public Transform parentToReturnTo = null;
     public Transform placeholderParent = null;
     public GameObject spawnCubesObject;
+    public bool isThecorrect = false;
     public Texture[] alphaTextures;
+
     GameObject placeholder = null;
 
     void Start()
@@ -20,7 +22,7 @@ public class Dragable : MonoBehaviour,IBeginDragHandler,IDragHandler ,IEndDragHa
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("OnBeginDrag");
+        //Debug.Log("OnBeginDrag");
 
         placeholder = new GameObject();
         placeholder.transform.SetParent(this.transform.parent);
@@ -67,27 +69,21 @@ public class Dragable : MonoBehaviour,IBeginDragHandler,IDragHandler ,IEndDragHa
         placeholder.transform.SetSiblingIndex(newSiblingIndex);
     }
 
-    public void OnEndDrag(PointerEventData eventData)
+    public void OnEndDrag(PointerEventData eventData)//Functionality and gameplay of change a letter mini game
     {
         string name=(gameObject.GetComponentInChildren<RawImage>().texture.name);
         RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(this.transform.position);
         if (Physics.Raycast(ray, out hit))
         {
-
             BoxCollider bc = hit.collider as BoxCollider;
-            //print((bc.gameObject.name + "(Clone)")+"===================");
             if (bc != null && name.Equals(spawnCubesObject.GetComponent<spawnCubes>().correctLetter) && (bc.gameObject.name).Equals(spawnCubesObject.GetComponent<spawnCubes>().wrongLetter + "(Clone)")) 
             {
-                print(bc.gameObject.name);
-                //string word = global[0].GetComponent<CommonWords>().getWord();
                 bc.gameObject.GetComponent<Replacement>().replaceObject = spawnCubesObject.GetComponent<spawnCubes>().getPrefabFromLetter(gameObject.GetComponentInChildren<RawImage>().texture.name);
                 bc.gameObject.GetComponent<Replacement>().replace();
                 Destroy(gameObject);
             }
-
         }
-        Debug.Log("OnEndDrag");
         this.transform.SetParent(parentToReturnTo);
         this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
         GetComponent<CanvasGroup>().blocksRaycasts = true;
@@ -97,31 +93,51 @@ public class Dragable : MonoBehaviour,IBeginDragHandler,IDragHandler ,IEndDragHa
 
     IEnumerator Delay(int delay)
     {
+        
         yield return new WaitForSeconds(delay);
-        print("EEEEEEEEEEEEEE" + spawnCubesObject.GetComponent<spawnCubes>().correctLetter);
-        int rand = Random.Range(0, 100);
-        if (rand < 50)
+        if (isThecorrect)
         {
-            print("Mpike");
+            print("CORRECT "+gameObject.name);
+            GameObject parent = transform.parent.gameObject;
+            string correctLetter = spawnCubesObject.GetComponent<spawnCubes>().correctLetter;
             foreach (Texture t in alphaTextures)
             {
-                if (t.name.Equals(spawnCubesObject.GetComponent<spawnCubes>().correctLetter))
+                if (t.name.Equals(correctLetter))
                 {
-
+                    Texture myTexture = gameObject.GetComponentInChildren<RawImage>().texture;
                     gameObject.GetComponentInChildren<RawImage>().texture = t;
+                    for (int i = 0; i < parent.transform.childCount; i++)
+                    {
+                        bool isNotComparingWithHimSelf = !parent.transform.GetChild(i).name.Equals(gameObject.name);
+                        string siblingTextureName = parent.transform.GetChild(i).GetComponentInChildren<RawImage>().texture.name;
+                        bool correctLetterHasBeeenShown = siblingTextureName.Equals(correctLetter);
+                        if ( correctLetterHasBeeenShown && isNotComparingWithHimSelf)
+                        {  
+                            while (myTexture.name.Equals(siblingTextureName) )
+                            {
+                                gameObject.GetComponentInChildren<RawImage>().texture = alphaTextures[Random.Range(0, alphaTextures.Length)];
+                            }
+                        }
+                    }
                 }
-
             }
         }
         else
         {
             gameObject.GetComponentInChildren<RawImage>().texture = alphaTextures[Random.Range(0, alphaTextures.Length)];
-        }
+            GameObject parent = transform.parent.gameObject;
+            for (int i = 0; i < parent.transform.childCount; i++)
+            {
+                while (gameObject.GetComponentInChildren<RawImage>().texture.name.Equals(parent.transform.GetChild(i).GetComponentInChildren<RawImage>().texture.name) && !parent.transform.GetChild(i).name.Equals(gameObject.name)) {
+                    gameObject.GetComponentInChildren<RawImage>().texture = alphaTextures[Random.Range(0, alphaTextures.Length)];
+                }
 
+            }
+        }
     }
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log(eventData.pointerDrag.name + " was dropped on " + gameObject.name);
+        //Debug.Log(eventData.pointerDrag.name + " was dropped on " + gameObject.name);
 
 
     }

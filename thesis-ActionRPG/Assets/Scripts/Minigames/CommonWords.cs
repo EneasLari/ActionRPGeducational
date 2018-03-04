@@ -24,13 +24,14 @@ public class CommonWords : MonoBehaviour {
                                     "ΕΙΠΕ" , "ΚΑΛΑ" , "ΟΜΑΔΑ" , "ΠΡΕΠΕΙ" , "ΩΡΑ",
                                     "ΕΙΧΕ" , "ΚΑΝΕΙ" , "ΟΜΩΣ" , "ΠΡΙΝ" , "ΩΣΤΕ", };
 
-    public string word;
+    private string word;
     // Use this for initialization
     void Start () {
-        int index = Random.Range(0, comwords.Length);
-        word= comwords[index];
+
     }
     public string getWord() {
+        int index = Random.Range(0, comwords.Length);
+        word = comwords[index];
         return word;
     }
 	

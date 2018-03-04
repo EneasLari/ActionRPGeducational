@@ -16,8 +16,12 @@ public class ObjectClick : MonoBehaviour {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray,out hit)) {
                 BoxCollider bc = hit.collider as BoxCollider;
-                if (bc!=null) {
-                    print(bc.gameObject.name);
+                if (bc!=null && bc.gameObject.GetComponent<Rigidbody>()!=null) {                 
+                    if (bc.gameObject.GetComponent<Rigidbody>().mass<100)
+                    {
+                        bc.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 300);
+                        print("You took out the extra letter BRAVO!");
+                    }
                 }
 
             }

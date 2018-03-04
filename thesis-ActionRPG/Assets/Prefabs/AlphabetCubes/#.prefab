@@ -9,47 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1707244709461620}
+  m_RootGameObject: {fileID: 1405689897481492}
   m_IsPrefabParent: 1
---- !u!1 &1707244709461620
+--- !u!1 &1405689897481492
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4296664686373508}
-  - component: {fileID: 33681504698697926}
-  - component: {fileID: 65923779219685788}
-  - component: {fileID: 23903370391446152}
-  - component: {fileID: 54624167151741788}
-  - component: {fileID: 114190563208257554}
+  - component: {fileID: 4610922603829648}
+  - component: {fileID: 33425191910286848}
+  - component: {fileID: 65002666682224612}
+  - component: {fileID: 23343006108440388}
+  - component: {fileID: 54719758634237672}
+  - component: {fileID: 114630806192597106}
   m_Layer: 0
-  m_Name: "\u03A9"
+  m_Name: '#'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4296664686373508
+--- !u!4 &4610922603829648
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707244709461620}
+  m_GameObject: {fileID: 1405689897481492}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 20.341843, y: 64.83658, z: -3.1152153}
+  m_LocalPosition: {x: 24, y: 68, z: -3.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!23 &23903370391446152
+--- !u!23 &23343006108440388
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707244709461620}
+  m_GameObject: {fileID: 1405689897481492}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -58,7 +58,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 37e7f76602ea52e4a8f5474a5c875a91, type: 2}
+  - {fileID: 2100000, guid: 073057bf033840c48888172c56d5c994, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,19 +78,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33681504698697926
+--- !u!33 &33425191910286848
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707244709461620}
+  m_GameObject: {fileID: 1405689897481492}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!54 &54624167151741788
+--- !u!54 &54719758634237672
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707244709461620}
+  m_GameObject: {fileID: 1405689897481492}
   serializedVersion: 2
   m_Mass: 100
   m_Drag: 0
@@ -100,28 +100,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65923779219685788
+--- !u!65 &65002666682224612
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707244709461620}
+  m_GameObject: {fileID: 1405689897481492}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114190563208257554
+--- !u!114 &114630806192597106
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1707244709461620}
+  m_GameObject: {fileID: 1405689897481492}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2acae18f68f692442bab131008618f53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  replaceObject: {fileID: 1405689897481492, guid: 26e5d2f3024c3bd47b2fde2210e0a79e,
-    type: 2}
+  replaceObject: {fileID: 1405689897481492}
