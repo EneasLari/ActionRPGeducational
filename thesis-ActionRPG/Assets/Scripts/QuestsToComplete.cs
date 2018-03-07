@@ -15,16 +15,15 @@ public class QuestsToComplete : MonoBehaviour {
         }
     }
 
-    public void getQuest() {
+    public GameObject getQuest() {
         if (quests.Count > 0)
         {
             if (quests.Count == 1) {
                 noQuests = true;
-            }
+            }            
             GameObject g = quests.Dequeue();
-            g.SetActive(true);
-            GameObject.FindGameObjectWithTag("MainCamera").transform.parent.gameObject.SetActive(false);
-            GameObject.FindGameObjectWithTag("Player").SetActive(false);
+            return g;
         }
+        return null;
     }
 }

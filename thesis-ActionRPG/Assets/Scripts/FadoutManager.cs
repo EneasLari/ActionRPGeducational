@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FadoutManager : MonoBehaviour {
-
+    //*******************************************************************************************************
+    //TO DO:here we share the quests to npcs,every npc must have a list of quest,quests must be assigned here!
     public Image FadeImg;
     public GameObject mainCamera;
     public GameObject player;
@@ -17,7 +18,7 @@ public class FadoutManager : MonoBehaviour {
         FadeImg.rectTransform.localScale = new Vector2(Screen.width, Screen.height);
     }
 
-    void Update()
+    void Update()//at every frame checks if there is need for fade in or fade out
     {
         if (fadeOut == true) {
             StartScene();
@@ -40,22 +41,24 @@ public class FadoutManager : MonoBehaviour {
         // Lerp the colour of the image between itself and black.
         FadeImg.color = Color.Lerp(FadeImg.color, Color.black, fadeSpeed * Time.deltaTime);
     }
-    void EndScene() {
+    void EndScene() {//after ending scene loads a quest or loads main game
         FadeImg.enabled = true;
         FadeIn();
         if (FadeImg.color.a >= 0.9f) {
             FadeImg.color = Color.black;
             if (player!=null && player.activeInHierarchy)
             {
-                GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<QuestsToComplete>().getQuest();
+                GameObject g= GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<QuestsToComplete>().getQuest();
+                g.SetActive(true);
+                mainCamera.transform.parent.gameObject.SetActive(false);
+                player.SetActive(false);
             }
             else {
                 mainCamera.transform.parent.gameObject.SetActive(true);
                 mainCamera.GetComponent<FadoutManager>().fadeOut = true;
                 player.SetActive(true);
                 gameObject.transform.parent.gameObject.SetActive(false);              
-            }
-            
+            }           
             fadeIn = false;           
         }
     }
