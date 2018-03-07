@@ -15,7 +15,6 @@ public class DialogueManager : MonoBehaviour {
 	}
 
     public void StartDialogue(Dialogue dialogue) {
-
         boxanimator.SetBool("isOpen",true);
         print("Starting dialogue");
         npcNameText.text = dialogue.npcName;
@@ -30,6 +29,9 @@ public class DialogueManager : MonoBehaviour {
 
     public void  DisplayNextSentence() {
         if (sentences.Count == 0) {
+            if (GameObject.FindGameObjectWithTag("MainCamera") != null && !GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<QuestsToComplete>().noQuests) {
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadoutManager>().fadeIn = true;
+            }           
             EndDialogue();
             return;
         }
@@ -47,7 +49,7 @@ public class DialogueManager : MonoBehaviour {
         }
     }
 
-    private void  EndDialogue() {
+    public void EndDialogue() {        
         boxanimator.SetBool("isOpen", false);
         print("END OF DIALOGUE");
     }

@@ -145,7 +145,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1091277071003322
 GameObject:
   m_ObjectHideFlags: 1
@@ -644,6 +644,7 @@ GameObject:
   - component: {fileID: 124118878140382784}
   - component: {fileID: 81336731770778084}
   - component: {fileID: 114157880300857250}
+  - component: {fileID: 114819901370667462}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -1574,7 +1575,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1062354570091554}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -119.9, y: 27.54, z: -5}
+  m_LocalPosition: {x: -65.2, y: -27.46, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4973526011125516}
@@ -3027,6 +3028,21 @@ MonoBehaviour:
   - {fileID: 1259273427415058, guid: 8beda81ae4a1b2240ad321e3ab7f3d83, type: 2}
   - {fileID: 1707244709461620, guid: d53d19ac36874ab459bb1d9c7eaa77cd, type: 2}
   - {fileID: 1707244709461620, guid: 29695782fb82b054cae98c80d7f55834, type: 2}
+--- !u!114 &114819901370667462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1453156065021582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2cddffe849da194fbdc7c520f20c1fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FadeImg: {fileID: 0}
+  fadeSpeed: 1.5
+  fadeIn: 0
+  fadeOut: 1
 --- !u!124 &124118878140382784
 Behaviour:
   m_ObjectHideFlags: 1

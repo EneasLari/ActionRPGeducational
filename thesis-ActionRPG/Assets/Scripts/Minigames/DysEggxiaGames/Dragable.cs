@@ -83,6 +83,7 @@ public class Dragable : MonoBehaviour,IBeginDragHandler,IDragHandler ,IEndDragHa
             {
                 bc.gameObject.GetComponent<Replacement>().replaceObject = spawnCubesObject.GetComponent<spawnCubes>().getPrefabFromLetter(gameObject.GetComponentInChildren<RawImage>().texture.name);
                 bc.gameObject.GetComponent<Replacement>().replace();
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadoutManager>().fadeIn = true;
                 print("You changed the correct letter.Excellent!");
                 Destroy(gameObject);
             }
