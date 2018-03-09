@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
-
+    
     public float walkSpeed = 2;
     public float runSpeed = 6;
     public float gravity = -12;

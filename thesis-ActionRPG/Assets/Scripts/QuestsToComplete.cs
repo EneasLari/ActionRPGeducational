@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class QuestsToComplete : MonoBehaviour {
+    //*******************************************************************************************************
+    //TO DO:here we share the quests to npcs,every npc must have a list of quest,quests must be assigned here!
+
     public bool noQuests = false;
     public GameObject[] questsArray;
     private Queue<GameObject> quests=new Queue<GameObject>();

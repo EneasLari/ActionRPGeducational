@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FadoutManager : MonoBehaviour {
-    //*******************************************************************************************************
-    //TO DO:here we share the quests to npcs,every npc must have a list of quest,quests must be assigned here!
+
     public Image FadeImg;
     public GameObject mainCamera;
     public GameObject player;
@@ -49,7 +48,9 @@ public class FadoutManager : MonoBehaviour {
             if (player!=null && player.activeInHierarchy)
             {
                 GameObject g= GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<QuestsToComplete>().getQuest();
-                g.SetActive(true);
+                Vector3 pos = new Vector3(g.transform.position.x, g.transform.position.y, g.transform.position.z);
+                Instantiate(g,pos,Quaternion.identity);
+                //g.SetActive(true);
                 mainCamera.transform.parent.gameObject.SetActive(false);
                 player.SetActive(false);
             }
@@ -57,7 +58,8 @@ public class FadoutManager : MonoBehaviour {
                 mainCamera.transform.parent.gameObject.SetActive(true);
                 mainCamera.GetComponent<FadoutManager>().fadeOut = true;
                 player.SetActive(true);
-                gameObject.transform.parent.gameObject.SetActive(false);              
+                Destroy(gameObject.transform.parent.gameObject);//Destroy the instantiated gameobject
+                //gameObject.transform.parent.gameObject.SetActive(false);              
             }           
             fadeIn = false;           
         }
