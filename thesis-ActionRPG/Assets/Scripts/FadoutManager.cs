@@ -8,7 +8,7 @@ public class FadoutManager : MonoBehaviour {
     public Image FadeImg;
     public GameObject mainCamera;
     public GameObject player;
-    public float fadeSpeed = 1.5f;
+    public float fadeSpeed = 1.5f;//bigger means faster!!!!!!
     public bool fadeIn = false;
     public bool fadeOut = true;
 
@@ -49,8 +49,7 @@ public class FadoutManager : MonoBehaviour {
             {
                 GameObject g= GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<QuestsToComplete>().getQuest();
                 Vector3 pos = new Vector3(g.transform.position.x, g.transform.position.y, g.transform.position.z);
-                Instantiate(g,pos,Quaternion.identity);
-                //g.SetActive(true);
+                GameObject inst=Instantiate(g,pos,Quaternion.identity);
                 mainCamera.transform.parent.gameObject.SetActive(false);
                 player.SetActive(false);
             }
@@ -59,6 +58,7 @@ public class FadoutManager : MonoBehaviour {
                 mainCamera.GetComponent<FadoutManager>().fadeOut = true;
                 player.SetActive(true);
                 Destroy(gameObject.transform.parent.gameObject);//Destroy the instantiated gameobject
+               
                 //gameObject.transform.parent.gameObject.SetActive(false);              
             }           
             fadeIn = false;           

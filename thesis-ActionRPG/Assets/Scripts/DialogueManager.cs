@@ -7,6 +7,7 @@ public class DialogueManager : MonoBehaviour {
     public Text npcNameText;
     public Text dialogueText;
     public Animator boxanimator;
+    public GameObject DialogTrigerer;//Its being initialized by CollisionTrigger
     private Queue<string> sentences;
 
 	// Use this for initialization
@@ -51,6 +52,18 @@ public class DialogueManager : MonoBehaviour {
 
     public void EndDialogue() {        
         boxanimator.SetBool("isOpen", false);
-        print("END OF DIALOGUE");
+        if(DialogTrigerer!=null) {
+            Destroy(DialogTrigerer);
+            print("END OF DIALOGUE");
+        }
+    }
+    private void Update()
+    {
+        if (boxanimator.GetBool("isOpen")==true) {
+            if (Input.GetMouseButtonDown(0)) {
+                print("LeftClick for next ");
+                DisplayNextSentence();
+            }
+        }
     }
 }

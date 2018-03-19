@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 33394970185143410}
   - component: {fileID: 23392234296366806}
   - component: {fileID: 64541085330067144}
+  - component: {fileID: 208930944744245354}
   m_Layer: 0
   m_Name: building_2
   m_TagString: Untagged
@@ -1075,3 +1076,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enablePropability: 74.8
+--- !u!208 &208930944744245354
+NavMeshObstacle:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1410582456400938}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.95400006, y: 1.996, z: 1.646}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 1.996, z: 0.119}
+  m_TimeToStationary: 0.5

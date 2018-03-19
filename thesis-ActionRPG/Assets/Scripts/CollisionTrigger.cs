@@ -9,22 +9,19 @@ public class CollisionTrigger : MonoBehaviour {
     {     
         if (other.gameObject.tag.Equals("Player")) {
             print("(TRIGGER ENTER)");
+            GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>().DialogTrigerer = gameObject;
+            gameObject.GetComponentInParent<NPC>().TriggerDialogue();
             this.GetComponentInParent<NavMeshAgent>().enabled = false;
             this.GetComponentInParent<Wander>().enabled = false;                   
         }
         
     }
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag.Equals("Player") && Input.GetKeyDown(KeyCode.Return)) {
-            //print("(TRIGGER STAY)");
-            gameObject.GetComponentInParent<NPC>().TriggerDialogue();
-        }
-    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag.Equals("Player")) {
             print("(TRIGGER EXIT)");
+            GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>().DialogTrigerer = null;
             this.GetComponentInParent<NavMeshAgent>().enabled = true;
             this.GetComponentInParent<Wander>().enabled = true;           
             gameObject.GetComponentInParent<NPC>().TriggerEndDialogue();

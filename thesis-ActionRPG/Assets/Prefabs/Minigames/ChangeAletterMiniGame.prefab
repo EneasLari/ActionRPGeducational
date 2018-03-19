@@ -447,7 +447,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1290225822444620
 GameObject:
   m_ObjectHideFlags: 1
@@ -3529,7 +3529,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FadeImg: {fileID: 0}
-  fadeSpeed: 1.5
+  mainCamera: {fileID: 0}
+  player: {fileID: 0}
+  fadeSpeed: 3
   fadeIn: 0
   fadeOut: 1
 --- !u!114 &114688356493541400

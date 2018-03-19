@@ -10,7 +10,7 @@ public class Weapon : MonoBehaviour {
     {
         if (other.gameObject.tag.Equals("Player")) {
 
-            other.gameObject.GetComponent<PlayerStats>().TakeDamege(damageOfWeapon);
+            //other.gameObject.GetComponent<PlayerStats>().TakeDamege(damageOfWeapon);
         }
     }
 
