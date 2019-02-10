@@ -9,7 +9,7 @@ public class CollisionTrigger : MonoBehaviour {
     {     
         if (other.gameObject.tag.Equals("Player")) {
             print("(TRIGGER ENTER)");
-            //GetComponentInParent<Animator>().SetFloat("isWalking", 0, 0.2f, Time.deltaTime);
+            this.GetComponentInParent<Animator>().SetFloat("isWalking", 0);
 
             GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>().DialogTrigerer = gameObject;
             gameObject.GetComponentInParent<NPC>().TriggerDialogue();
@@ -22,7 +22,7 @@ public class CollisionTrigger : MonoBehaviour {
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag.Equals("Player")) {
-            //GetComponentInParent<Animator>().SetFloat("isWalking", 1, 0.2f, Time.deltaTime);
+            this.GetComponentInParent<Animator>().SetFloat("isWalking", 1);
             print("(TRIGGER EXIT)");
             GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>().DialogTrigerer = null;
             this.GetComponentInParent<NavMeshAgent>().enabled = true;

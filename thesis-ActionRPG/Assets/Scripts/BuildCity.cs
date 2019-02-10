@@ -44,10 +44,14 @@ public class BuildCity : MonoBehaviour
         {
             for (int w = 0; w < mapWidth; w++)
             {
-                if (mapGrid[h, w] == '#') {
-                    int result = (int)(Mathf.PerlinNoise(w / 10f + seed, h / 10f + seed) * 18);
+                if (mapGrid[h, w] == '#' || h == mapHeight - 1 || w == mapWidth - 1 || h == 0 || w == 0) {
+                    int result = (int)(Mathf.PerlinNoise(w / 10f + seed, h / 10f + seed) * 22);
                     Vector3 pos = new Vector3(w * envObjectFootprint, 0.5f, h * envObjectFootprint);
-                    if (result < 3)
+                    if (h == mapHeight-1 || w == mapWidth-1 || h==0 || w==0) {
+                        GameObject inst = Instantiate(buldings[9], pos, Quaternion.identity);
+                        inst.transform.localScale = new Vector3(envObjectFootprint + .15f, inst.transform.localScale.y, envObjectFootprint + .15f);
+                    }
+                    else if (result < 3)
                     {
                         Instantiate(buldings[0], pos, Quaternion.identity);
                     }
@@ -69,18 +73,22 @@ public class BuildCity : MonoBehaviour
                     }
                     else if (result < 12)//pezodromos
                     {
-                        GameObject inst= Instantiate(buldings[5], pos, Quaternion.identity);
-                        inst.transform.localScale=new Vector3(envObjectFootprint+.15f,inst.transform.localScale.y, envObjectFootprint+.15f);
+                        GameObject inst = Instantiate(buldings[5], pos, Quaternion.identity);
+                        inst.transform.localScale = new Vector3(envObjectFootprint + .15f, inst.transform.localScale.y, envObjectFootprint + .15f);
                     }
                     else if (result < 14)
                     {
                         Instantiate(buldings[6], pos, Quaternion.identity);
                     }
-                    else if (result < 18)
+                    else if (result < 16)
                     {
                         Vector3 pos2 = new Vector3(w * envObjectFootprint, 0.28f, h * envObjectFootprint);//for the trees only
                         GameObject inst = Instantiate(buldings[7], pos2, Quaternion.identity);
                         inst.transform.localScale = new Vector3(envObjectFootprint, inst.transform.localScale.y, envObjectFootprint);
+                    }
+                    else if (result < 22)
+                    {
+                        Instantiate(buldings[8], pos, Quaternion.identity);
                     }
                 }
             }
