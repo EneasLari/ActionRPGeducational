@@ -10,10 +10,13 @@ public class CollisionTrigger : MonoBehaviour {
         if (other.gameObject.tag.Equals("Player")) {
             print("(TRIGGER ENTER)");
 <<<<<<< HEAD
+<<<<<<< HEAD
             //GetComponentInParent<Animator>().SetFloat("isWalking", 0, 0.2f, Time.deltaTime);
 
             GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>().DialogTrigerer = gameObject;
             gameObject.GetComponentInParent<NPC>().TriggerDialogue();
+=======
+>>>>>>> parent of 682910f... inventory for changing apearence ,fixing dialogue system and making inventory slots unlockable by score
 =======
 >>>>>>> parent of 682910f... inventory for changing apearence ,fixing dialogue system and making inventory slots unlockable by score
             this.GetComponentInParent<NavMeshAgent>().enabled = false;

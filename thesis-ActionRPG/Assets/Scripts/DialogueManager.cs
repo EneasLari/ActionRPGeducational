@@ -52,6 +52,7 @@ public class DialogueManager : MonoBehaviour {
     public void EndDialogue() {        
         boxanimator.SetBool("isOpen", false);
 <<<<<<< HEAD
+<<<<<<< HEAD
         if(DialogTrigerer!=null) {
             
             Destroy(DialogTrigerer);
@@ -66,6 +67,9 @@ public class DialogueManager : MonoBehaviour {
                 DisplayNextSentence();
             }
         }
+=======
+        print("END OF DIALOGUE");
+>>>>>>> parent of 682910f... inventory for changing apearence ,fixing dialogue system and making inventory slots unlockable by score
 =======
         print("END OF DIALOGUE");
 >>>>>>> parent of 682910f... inventory for changing apearence ,fixing dialogue system and making inventory slots unlockable by score
