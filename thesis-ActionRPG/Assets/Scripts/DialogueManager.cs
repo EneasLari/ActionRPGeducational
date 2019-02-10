@@ -53,6 +53,7 @@ public class DialogueManager : MonoBehaviour {
     public void EndDialogue() {        
         boxanimator.SetBool("isOpen", false);
         if(DialogTrigerer!=null) {
+            
             Destroy(DialogTrigerer);
             print("END OF DIALOGUE");
         }
