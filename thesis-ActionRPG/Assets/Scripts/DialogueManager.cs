@@ -7,7 +7,6 @@ public class DialogueManager : MonoBehaviour {
     public Text npcNameText;
     public Text dialogueText;
     public Animator boxanimator;
-    public GameObject DialogTrigerer;//Its being initialized by CollisionTrigger
     private Queue<string> sentences;
 
 	// Use this for initialization
@@ -52,6 +51,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void EndDialogue() {        
         boxanimator.SetBool("isOpen", false);
+<<<<<<< HEAD
         if(DialogTrigerer!=null) {
             
             Destroy(DialogTrigerer);
@@ -66,5 +66,8 @@ public class DialogueManager : MonoBehaviour {
                 DisplayNextSentence();
             }
         }
+=======
+        print("END OF DIALOGUE");
+>>>>>>> parent of 682910f... inventory for changing apearence ,fixing dialogue system and making inventory slots unlockable by score
     }
 }

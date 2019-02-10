@@ -22,14 +22,12 @@ public class ObjectClick : MonoBehaviour {
                     {
                         bc.gameObject.GetComponent<Rigidbody>().AddForce(transform.forward * 300);
                         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadoutManager>().fadeIn = true;
-                        print("You took out the extra letter BRAVO! Take 100 points");
-                        GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<PlayerStats>().AddPoints(100);
+                        print("You took out the extra letter BRAVO!");
                     }
                     else if (bc.gameObject.name.Equals("+(Clone)")) {
                         DestroyObject(bc.gameObject);
                         GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadoutManager>().fadeIn = true;
-                        print("YOU SEPARATED THE WORDS EXCELLENT take 150points");
-                        GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<PlayerStats>().AddPoints(150);
+                        print("YOU SEPARATED THE WORDS EXCELLENT");
                     }
                 }
 

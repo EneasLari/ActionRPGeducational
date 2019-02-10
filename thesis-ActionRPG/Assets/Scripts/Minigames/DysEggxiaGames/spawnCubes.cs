@@ -12,7 +12,7 @@ public class spawnCubes : MonoBehaviour {
     public bool isCutIntoTwoWords = false;
     public GameObject betweenObject;
     public GameObject[] alphabetprefabs;
-    private GameObject global;
+    private GameObject[] global;
     private string wordChanged;
     private string word;
     // Use this for initialization
@@ -28,8 +28,8 @@ public class spawnCubes : MonoBehaviour {
     }
 
     private void spawnwithchangedLetter(float offsetatX) {
-        global = GameObject.FindGameObjectWithTag("GlobalVariables");
-        word = global.GetComponent<CommonWords>().getWord();
+        global = GameObject.FindGameObjectsWithTag("GlobalVariables");
+        word = global[0].GetComponent<CommonWords>().getWord();
         print(word);
         if (isExtraLetterGame)
         {
@@ -42,8 +42,7 @@ public class spawnCubes : MonoBehaviour {
         foreach (char c in wordChanged) {
             count++;
             Vector3 pos = new Vector3(gameObject.transform.position.x + offsetatX, gameObject.transform.position.y, gameObject.transform.position.z);
-            GameObject inst = Instantiate(getPrefabFromLetter(c + ""), pos, getPrefabFromLetter(c+"").transform.rotation);
-            inst.transform.SetParent(gameObject.transform);
+            GameObject inst = Instantiate(getPrefabFromLetter(c + ""), pos, getPrefabFromLetter(c+"").transform.rotation);          
             if (extraLetterIndex>=0 && wordChanged[extraLetterIndex].Equals(c) && (count-1)==extraLetterIndex) {
                 inst.GetComponent<Rigidbody>().mass = 1;
                 extraLetterIndex = -1;
@@ -54,9 +53,9 @@ public class spawnCubes : MonoBehaviour {
 
     private void spawnwtwoWords(float offsetatX)
     {
-        global = GameObject.FindGameObjectWithTag("GlobalVariables");
-        string word1 = global.GetComponent<CommonWords>().getWord();
-        string word2 = global.GetComponent<CommonWords>().getWord();
+        global = GameObject.FindGameObjectsWithTag("GlobalVariables");
+        string word1 = global[0].GetComponent<CommonWords>().getWord();
+        string word2 = global[0].GetComponent<CommonWords>().getWord();
         Vector3 pos=new Vector3(0,0,0);
         print(word1);
         print(word2);

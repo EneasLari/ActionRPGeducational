@@ -6,7 +6,6 @@ TagManager:
   tags:
   - GlobalVariables
   - Spawner
-  - DialogueManager
   layers:
   - Default
   - TransparentFX
