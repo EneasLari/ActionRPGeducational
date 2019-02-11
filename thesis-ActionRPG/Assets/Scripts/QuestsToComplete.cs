@@ -13,7 +13,7 @@ public class QuestsToComplete : MonoBehaviour {
     private void Start()
     {
         foreach (GameObject g in questsArray) {
-            print("BAZO STOIXEIO"+g);
+            //print("BAZO STOIXEIO"+g);
             quests.Enqueue(g);
         }
     }

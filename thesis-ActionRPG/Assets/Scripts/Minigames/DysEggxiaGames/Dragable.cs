@@ -83,7 +83,9 @@ public class Dragable : MonoBehaviour,IBeginDragHandler,IDragHandler ,IEndDragHa
             {
                 bc.gameObject.GetComponent<Replacement>().replaceObject = spawnCubesObject.GetComponent<spawnCubes>().getPrefabFromLetter(gameObject.GetComponentInChildren<RawImage>().texture.name);
                 bc.gameObject.GetComponent<Replacement>().replace();
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadoutManager>().fadeIn = true;
+                GameObject obj = GameObject.FindGameObjectWithTag("MainCamera");
+                obj.GetComponent<FadoutManager>().fadeIn = true;
+                obj.GetComponent<btnFX>().ClickSound();
                 print("You changed the correct letter.Excellent! take 100points");
                 GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<PlayerStats>().AddPoints(100);
                 Destroy(gameObject);
@@ -102,7 +104,7 @@ public class Dragable : MonoBehaviour,IBeginDragHandler,IDragHandler ,IEndDragHa
         yield return new WaitForSeconds(delay);
         if (isThecorrect)
         {
-            print("CORRECT "+gameObject.name);
+            //print("CORRECT "+gameObject.name);
             GameObject parent = transform.parent.gameObject;
             string correctLetter = spawnCubesObject.GetComponent<spawnCubes>().correctLetter;
             foreach (Texture t in alphaTextures)

@@ -17,7 +17,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue(Dialogue dialogue) {
         boxanimator.SetBool("isOpen",true);
-        print("Starting dialogue");
+        //print("Starting dialogue");
         npcNameText.text = dialogue.npcName;
 
         sentences.Clear();//if sentences queue have previus elements we must clear it
@@ -39,7 +39,7 @@ public class DialogueManager : MonoBehaviour {
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
-        print(sentence);
+        //print(sentence);
     }
 
     IEnumerator TypeSentence(string sentence) {
@@ -55,14 +55,14 @@ public class DialogueManager : MonoBehaviour {
         if(DialogTrigerer!=null) {
             
             Destroy(DialogTrigerer);
-            print("END OF DIALOGUE");
+            //print("END OF DIALOGUE");
         }
     }
     private void Update()
     {
         if (boxanimator.GetBool("isOpen")==true) {
             if (Input.GetMouseButtonDown(0)) {
-                print("LeftClick for next ");
+                //print("LeftClick for next ");
                 DisplayNextSentence();
             }
         }

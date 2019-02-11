@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour {
 
     public void OpenCloseInventory()
     {
-        print(isOpen);
+        //print(isOpen);
         if (isOpen)
         {
             inventoryAnimator.SetBool("isOpen", false);

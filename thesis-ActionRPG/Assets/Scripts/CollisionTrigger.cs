@@ -8,9 +8,9 @@ public class CollisionTrigger : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {     
         if (other.gameObject.tag.Equals("Player")) {
-            print("(TRIGGER ENTER)");
+            //print("(TRIGGER ENTER)");
             this.GetComponentInParent<Animator>().SetFloat("isWalking", 0);
-
+            
             GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>().DialogTrigerer = gameObject;
             gameObject.GetComponentInParent<NPC>().TriggerDialogue();
             this.GetComponentInParent<NavMeshAgent>().enabled = false;
@@ -23,7 +23,7 @@ public class CollisionTrigger : MonoBehaviour {
     {
         if (other.gameObject.tag.Equals("Player")) {
             this.GetComponentInParent<Animator>().SetFloat("isWalking", 1);
-            print("(TRIGGER EXIT)");
+            //print("(TRIGGER EXIT)");
             GameObject.FindGameObjectWithTag("DialogueManager").GetComponent<DialogueManager>().DialogTrigerer = null;
             this.GetComponentInParent<NavMeshAgent>().enabled = true;
             this.GetComponentInParent<Wander>().enabled = true;           

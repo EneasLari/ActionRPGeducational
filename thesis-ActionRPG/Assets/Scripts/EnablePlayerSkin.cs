@@ -21,17 +21,20 @@ public class EnablePlayerSkin : MonoBehaviour {
 
         int count = gameObject.transform.parent.childCount;
         EnablePlayerSkin child;
+        bool enaughPoints = GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<PlayerStats>().points >= minPointsToUnlock;
         for (int i = 0; i < count; i++)
         {
             child = gameObject.transform.parent.GetChild(i).gameObject.GetComponent<EnablePlayerSkin>();
-            if (child!=null && child.skinToEnable!=null &&  child.skinToEnable.activeInHierarchy==true) {
+            if (child!=null && child.skinToEnable!=null &&  child.skinToEnable.activeInHierarchy==true && enaughPoints) {
+                
                 child.skinToEnable.SetActive(false);
             }            
         }
         if (skinToEnable!=null) {
-            if (GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<PlayerStats>().points > minPointsToUnlock)
+            if (enaughPoints)
             {
                 skinToEnable.SetActive(true);
+                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<FadoutManager>().player = skinToEnable;
             }
             else {
                 print("YOU HAVE NO ENOUGH POINTS");

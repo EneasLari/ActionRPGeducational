@@ -181,6 +181,7 @@ GameObject:
   - component: {fileID: 114149102237429194}
   - component: {fileID: 114332552237250880}
   - component: {fileID: 114502581313234900}
+  - component: {fileID: 65006699890336514}
   m_Layer: 0
   m_Name: kaya
   m_TagString: Untagged
@@ -1620,7 +1621,7 @@ Transform:
   m_GameObject: {fileID: 1128700464979322}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.339, y: 0.339, z: 0.078}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children:
   - {fileID: 4016231723376400}
   - {fileID: 4891434515426084}
@@ -3067,6 +3068,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: fe96651be7d34ed4584e141673fcb71b, type: 3}
+--- !u!65 &65006699890336514
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1128700464979322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 2.63, z: 1}
+  m_Center: {x: 0, y: 1.44, z: 0}
 --- !u!65 &65298497468658816
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3090,7 +3103,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.27, z: 0}
 --- !u!95 &95716748613291078
 Animator:
   serializedVersion: 3
@@ -3778,7 +3791,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: -0.08
+  m_BaseOffset: -0.45
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!208 &208431938564733166

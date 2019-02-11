@@ -7,8 +7,8 @@ public class FadoutManager : MonoBehaviour {
 
     public Image FadeImg;
     public GameObject mainCamera;
-    private GameObject player;
-    public float fadeSpeed = 1.5f;//bigger means faster!!!!!!
+    public GameObject player;
+    public float fadeSpeed = 1.0f;//bigger means faster!!!!!!
     public bool fadeIn = false;
     public bool fadeOut = true;
 
@@ -41,22 +41,24 @@ public class FadoutManager : MonoBehaviour {
         FadeImg.color = Color.Lerp(FadeImg.color, Color.black, fadeSpeed * Time.deltaTime);
     }
     void EndScene() {//after ending scene loads a quest or loads main game
-        
+        //mainCamera.GetComponent<FadoutManager>().player = GameObject.FindGameObjectWithTag("Player");
         FadeImg.enabled = true;
         FadeIn();
+        
         if (FadeImg.color.a >= 0.9f) {
             FadeImg.color = Color.black;
             if (player!=null && player.activeInHierarchy)
-            {
+            {             
                 GameObject g= GameObject.FindGameObjectWithTag("GlobalVariables").GetComponent<QuestsToComplete>().getQuest();
                 Vector3 pos = new Vector3(g.transform.position.x, g.transform.position.y, g.transform.position.z);
                 GameObject inst=Instantiate(g,pos,Quaternion.identity);
+                inst.transform.Find("MainCamera").GetComponent<FadoutManager>().player= GameObject.FindGameObjectWithTag("Player"); ;
                 mainCamera.transform.parent.gameObject.SetActive(false);
                 player.SetActive(false);
             }
             else {
                 mainCamera.transform.parent.gameObject.SetActive(true);
-                mainCamera.GetComponent<FadoutManager>().fadeOut = true;
+                mainCamera.GetComponent<FadoutManager>().fadeOut = true;             
                 player.SetActive(true);
                 Destroy(gameObject.transform.parent.gameObject);//Destroy the instantiated gameobject
                
@@ -68,7 +70,6 @@ public class FadoutManager : MonoBehaviour {
     
     void StartScene()
     {
-        player = GameObject.FindGameObjectWithTag("PlayersParent");
         // Fade the texture to clear.
         FadeOut();
 

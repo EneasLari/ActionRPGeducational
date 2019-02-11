@@ -30,7 +30,7 @@ public class spawnCubes : MonoBehaviour {
     private void spawnwithchangedLetter(float offsetatX) {
         global = GameObject.FindGameObjectWithTag("GlobalVariables");
         word = global.GetComponent<CommonWords>().getWord();
-        print(word);
+        //print(word);
         if (isExtraLetterGame)
         {
             wordChanged= addExtraLetter(word);//ADD EXTRA LETTER
