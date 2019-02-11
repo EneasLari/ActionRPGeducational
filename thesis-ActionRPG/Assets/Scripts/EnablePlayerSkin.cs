@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class EnablePlayerSkin : MonoBehaviour {
-    public GameObject skinToEnable;
+    private GameObject skinToEnable;
     public int minPointsToUnlock = 100;
     public void Start()
     {

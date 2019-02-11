@@ -7,7 +7,7 @@ public class FadoutManager : MonoBehaviour {
 
     public Image FadeImg;
     public GameObject mainCamera;
-    public GameObject player;
+    private GameObject player;
     public float fadeSpeed = 1.5f;//bigger means faster!!!!!!
     public bool fadeIn = false;
     public bool fadeOut = true;
@@ -41,6 +41,7 @@ public class FadoutManager : MonoBehaviour {
         FadeImg.color = Color.Lerp(FadeImg.color, Color.black, fadeSpeed * Time.deltaTime);
     }
     void EndScene() {//after ending scene loads a quest or loads main game
+        
         FadeImg.enabled = true;
         FadeIn();
         if (FadeImg.color.a >= 0.9f) {
@@ -67,6 +68,7 @@ public class FadoutManager : MonoBehaviour {
     
     void StartScene()
     {
+        player = GameObject.FindGameObjectWithTag("PlayersParent");
         // Fade the texture to clear.
         FadeOut();
 

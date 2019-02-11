@@ -46,8 +46,11 @@ public class PlayerController : MonoBehaviour
         // animator
         float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
         animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
+        
 
     }
+
+
 
     void Move(Vector2 inputDir, bool running)
     {

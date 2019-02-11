@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 114946580958213376}
   - component: {fileID: 114528702332609106}
   - component: {fileID: 195716988371138846}
+  - component: {fileID: 136158782851170834}
   m_Layer: 0
   m_Name: claireNavMeshObject
   m_TagString: Untagged
@@ -2838,8 +2839,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.2, y: 1.5, z: 1.5}
+  m_Center: {x: 0, y: 0.37, z: 0}
 --- !u!65 &65269228529932566
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3008,6 +3009,19 @@ MonoBehaviour:
     sentences:
     - "\u0391\u03C2 \u03C0\u03B1\u03B9\u03BE\u03BF\u03C5\u03BC\u03B5 \u03B5\u03BD\u03B1
       \u03C0\u03B1\u03B9\u03C7\u03BD\u03B9\u03B4\u03B9 \u03BC\u03B5 \u03B3\u03C1\u03B1\u03BC\u03BC\u03B1\u03C4\u03B1 "
+--- !u!136 &136158782851170834
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1500031106959346}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.72, z: 0}
 --- !u!136 &136379827334049810
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -3549,7 +3563,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2
-  m_BaseOffset: -0.3
+  m_BaseOffset: -0.4
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!208 &208951501622193794
