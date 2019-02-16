@@ -8,7 +8,7 @@ public class FadoutManager : MonoBehaviour {
     public Image FadeImg;
     public GameObject mainCamera;
     public GameObject player;
-    public float fadeSpeed = 1.0f;//bigger means faster!!!!!!
+    public float fadeSpeed = 0.05f;//bigger means faster!!!!!!
     public bool fadeIn = false;
     public bool fadeOut = true;
 

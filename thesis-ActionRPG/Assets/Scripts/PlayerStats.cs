@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour {
     public int points=0;
     public Text pointsText;
+    public Text pointsTextIncreasing;
     public int TxtIncrWhenAddingPoints = 20;
 
     public void AddPoints(int addpoints) {
@@ -15,20 +16,20 @@ public class PlayerStats : MonoBehaviour {
     IEnumerator ScoreAdd(int addpoints)
     {
         yield return new WaitForSeconds(1.1f);
-        Vector3 newpos = new Vector3(Screen.width/2, Screen.height / 2,0);
-        Vector3 currentpos = pointsText.rectTransform.position;
-        pointsText.rectTransform.position=newpos;
+        pointsText.gameObject.SetActive(false);
+        pointsTextIncreasing.gameObject.SetActive(true);
         for (int i=0;i<addpoints/10;i++) {            
             points = points + 10;
-            pointsText.text = "" + points;
-            pointsText.fontSize += TxtIncrWhenAddingPoints;
-            pointsText.alignment = TextAnchor.MiddleCenter;
+            pointsTextIncreasing.text = "" + points;
+            pointsTextIncreasing.fontSize += TxtIncrWhenAddingPoints;
             yield return new WaitForSeconds(.1f);
-            pointsText.fontSize -= TxtIncrWhenAddingPoints;
+            pointsTextIncreasing.fontSize -= TxtIncrWhenAddingPoints;
             yield return new WaitForSeconds(.1f);
         }
-        pointsText.rectTransform.position = currentpos;
-        pointsText.alignment = TextAnchor.UpperLeft;
+        pointsText.gameObject.SetActive(true);
+        pointsText.text = "" + points;
+        pointsTextIncreasing.gameObject.SetActive(false);
+
     }
 
     // Use this for initialization
