@@ -3154,7 +3154,7 @@ MonoBehaviour:
   FadeImg: {fileID: 0}
   mainCamera: {fileID: 0}
   player: {fileID: 0}
-  fadeSpeed: 3
+  fadeSpeed: 1.5
   fadeIn: 0
   fadeOut: 1
 --- !u!114 &114421932607418268
